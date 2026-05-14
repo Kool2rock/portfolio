@@ -1,23 +1,23 @@
 /* ============================================
-   VISUALLY STUNNING PORTFOLIO
+   VISUALLY STUNNING PORTFOLIO — LIGHT THEME
    ============================================ */
 
 :root {
-  --bg: #050a18;
-  --bg-light: #0a1128;
+  --bg: #faf8f5;
+  --bg-light: #f0ece6;
   --accent: #6366f1;
-  --accent-hover: #818cf8;
-  --accent-glow: rgba(99, 102, 241, 0.4);
+  --accent-hover: #4f46e5;
+  --accent-glow: rgba(99, 102, 241, 0.25);
   --accent-alt: #ec4899;
-  --accent-alt-glow: rgba(236, 72, 153, 0.3);
-  --cyan: #22d3ee;
-  --text: #f8fafc;
-  --text-muted: #94a3b8;
-  --card: rgba(255, 255, 255, 0.03);
-  --card-hover: rgba(255, 255, 255, 0.07);
-  --border: rgba(255, 255, 255, 0.06);
-  --glass: rgba(255, 255, 255, 0.04);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --accent-alt-glow: rgba(236, 72, 153, 0.2);
+  --cyan: #0891b2;
+  --text: #1e1b2e;
+  --text-muted: #5e5a6e;
+  --card: rgba(255, 255, 255, 0.65);
+  --card-hover: rgba(255, 255, 255, 0.85);
+  --border: rgba(0, 0, 0, 0.06);
+  --glass: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(0, 0, 0, 0.07);
   --mx: 50vw;
   --my: 50vh;
 }
@@ -52,21 +52,21 @@ body {
 .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.35;
+  filter: blur(100px);
+  opacity: 0.4;
   animation: orbFloat 20s ease-in-out infinite;
 }
 
 .orb-1 {
   width: 600px; height: 600px;
-  background: radial-gradient(circle, var(--accent), transparent 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.35), transparent 70%);
   top: -10%; left: -10%;
   animation-duration: 25s;
 }
 
 .orb-2 {
   width: 500px; height: 500px;
-  background: radial-gradient(circle, var(--accent-alt), transparent 70%);
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.25), transparent 70%);
   bottom: -10%; right: -5%;
   animation-duration: 20s;
   animation-delay: -5s;
@@ -74,11 +74,11 @@ body {
 
 .orb-3 {
   width: 400px; height: 400px;
-  background: radial-gradient(circle, var(--cyan), transparent 70%);
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.2), transparent 70%);
   top: 40%; left: 50%;
   animation-duration: 30s;
   animation-delay: -10s;
-  opacity: 0.15;
+  opacity: 0.25;
 }
 
 @keyframes orbFloat {
@@ -93,7 +93,7 @@ body::after {
   content: '';
   position: fixed;
   width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.07), transparent 60%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.06), transparent 60%);
   left: var(--mx); top: var(--my);
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -115,7 +115,7 @@ h2 {
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
-  background: linear-gradient(135deg, var(--text), var(--accent-hover));
+  background: linear-gradient(135deg, var(--text), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -136,11 +136,11 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 p { color: var(--text-muted); max-width: 65ch; }
 
 a {
-  color: var(--accent-hover);
+  color: var(--accent);
   text-decoration: none;
   transition: color 0.3s;
 }
-a:hover { color: var(--cyan); }
+a:hover { color: var(--accent-hover); }
 
 /* ---- Layout ---- */
 .container {
@@ -162,12 +162,12 @@ a:hover { color: var(--cyan); }
 }
 
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(99, 102, 241, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(99, 102, 241, 0.2);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(99, 102, 241, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 8px 32px rgba(99, 102, 241, 0.08),
+    0 0 0 1px rgba(99, 102, 241, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 /* ---- Nav ---- */
@@ -179,7 +179,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  background: rgba(5, 10, 24, 0.4);
+  background: rgba(250, 248, 245, 0.5);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid transparent;
@@ -188,9 +188,9 @@ nav {
 
 nav.scrolled {
   padding: 0.7rem clamp(1.25rem, 5vw, 4rem);
-  background: rgba(5, 10, 24, 0.85);
+  background: rgba(250, 248, 245, 0.9);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), 0 0 80px rgba(99, 102, 241, 0.03);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .logo {
@@ -228,7 +228,7 @@ nav a::after {
   position: absolute;
   bottom: -3px; left: 50%;
   width: 0; height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--cyan));
+  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
   border-radius: 1px;
   transition: all 0.3s ease;
   transform: translateX(-50%);
@@ -268,13 +268,13 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 .hero-label {
   display: inline-block;
   font-size: 0.78rem;
-  color: var(--accent-hover);
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.25em;
   font-weight: 600;
   margin-bottom: 1.5rem;
   padding: 0.5rem 1.25rem;
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(99, 102, 241, 0.2);
   border-radius: 100px;
   background: rgba(99, 102, 241, 0.06);
   position: relative;
@@ -285,7 +285,7 @@ nav a:hover::after, nav a.active::after { width: 100%; }
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
   animation: shimmer 3s infinite;
 }
 
@@ -356,11 +356,11 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 }
 
 .hero-social a:hover {
-  color: var(--accent);
+  color: #fff;
   border-color: var(--accent);
-  background: rgba(99, 102, 241, 0.12);
+  background: var(--accent);
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.25);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
 }
 
 /* Scroll indicator */
@@ -425,7 +425,7 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 .btn-primary:hover {
   color: #fff;
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px var(--accent-glow), 0 0 60px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 12px 35px var(--accent-glow), 0 0 60px rgba(99, 102, 241, 0.1);
 }
 
 .btn-primary:hover::before { opacity: 1; }
@@ -437,11 +437,11 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 
 @keyframes btnPulse {
   0%, 100% { box-shadow: 0 4px 20px var(--accent-glow); }
-  50% { box-shadow: 0 4px 30px var(--accent-glow), 0 0 50px rgba(99, 102, 241, 0.12); }
+  50% { box-shadow: 0 4px 30px var(--accent-glow), 0 0 50px rgba(99, 102, 241, 0.08); }
 }
 
 .btn-outline {
-  background: var(--glass);
+  background: rgba(255, 255, 255, 0.7);
   color: var(--text);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(10px);
@@ -449,9 +449,10 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 
 .btn-outline:hover {
   border-color: var(--accent);
-  color: var(--accent-hover);
-  background: rgba(99, 102, 241, 0.08);
+  color: var(--accent);
+  background: rgba(99, 102, 241, 0.06);
   transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.1);
 }
 
 /* ---- Sections ---- */
@@ -466,7 +467,7 @@ section {
 .section-tag {
   display: inline-block;
   font-size: 0.78rem;
-  color: var(--accent-hover);
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-weight: 600;
@@ -510,7 +511,7 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(236, 72, 153, 0.05));
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(236, 72, 153, 0.04));
   opacity: 0;
   transition: opacity 0.4s;
 }
@@ -519,14 +520,14 @@ section {
 
 .stat:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 40px rgba(99, 102, 241, 0.08);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.1), 0 0 0 1px rgba(99, 102, 241, 0.08);
 }
 
 .stat-value {
   font-size: 2.5rem;
   font-weight: 800;
   line-height: 1;
-  background: linear-gradient(135deg, var(--accent-hover), var(--cyan));
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -535,7 +536,7 @@ section {
 .stat-suffix {
   font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--accent-hover), var(--cyan));
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -582,16 +583,16 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.04), transparent 50%);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.03), transparent 50%);
   opacity: 0;
   transition: opacity 0.4s;
 }
 
 .exp-card:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(99, 102, 241, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(99, 102, 241, 0.15);
   transform: translateX(8px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25), -4px 0 30px rgba(99, 102, 241, 0.08);
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.08), -4px 0 30px rgba(99, 102, 241, 0.04);
 }
 
 .exp-card:hover::before { opacity: 1; width: 4px; }
@@ -611,7 +612,7 @@ section {
 .exp-title { color: var(--text); font-size: 1.15rem; }
 
 .exp-company {
-  color: var(--accent-hover);
+  color: var(--accent);
   font-size: 0.9rem;
   font-weight: 500;
   margin-top: 0.2rem;
@@ -621,8 +622,8 @@ section {
   font-size: 0.82rem;
   color: var(--text-muted);
   padding: 0.35rem 0.9rem;
-  background: rgba(99, 102, 241, 0.08);
-  border: 1px solid rgba(99, 102, 241, 0.12);
+  background: rgba(99, 102, 241, 0.06);
+  border: 1px solid rgba(99, 102, 241, 0.1);
   border-radius: 100px;
   white-space: nowrap;
   font-weight: 500;
@@ -653,12 +654,12 @@ section {
   gap: 0.4rem;
   margin-top: 1rem;
   padding: 0.45rem 1.1rem;
-  background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(236, 72, 153, 0.05));
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(236, 72, 153, 0.04));
   color: var(--accent-alt);
   border-radius: 100px;
   font-size: 0.82rem;
   font-weight: 600;
-  border: 1px solid rgba(236, 72, 153, 0.15);
+  border: 1px solid rgba(236, 72, 153, 0.12);
   position: relative;
   z-index: 1;
 }
@@ -696,9 +697,10 @@ section {
 }
 
 .skill-group:hover {
-  border-color: rgba(99, 102, 241, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(99, 102, 241, 0.15);
   transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(99, 102, 241, 0.05);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.08), 0 0 0 1px rgba(99, 102, 241, 0.04);
 }
 
 .skill-group:hover::before { opacity: 1; }
@@ -734,7 +736,7 @@ section {
 
 .skill-bar {
   height: 6px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(0, 0, 0, 0.06);
   border-radius: 3px;
   overflow: hidden;
   position: relative;
@@ -761,7 +763,7 @@ section {
   position: absolute;
   right: 0; top: -2px; bottom: -2px;
   width: 20px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.6), transparent);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.5), transparent);
   border-radius: 50%;
   filter: blur(4px);
 }
@@ -813,32 +815,34 @@ section {
 
 .project-card:hover {
   box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.4),
-    0 0 80px rgba(99, 102, 241, 0.08);
+    0 25px 60px rgba(99, 102, 241, 0.1),
+    0 0 40px rgba(99, 102, 241, 0.04);
 }
 
 .project-top {
   padding: 2rem 2rem 1.5rem;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(236, 72, 153, 0.03));
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.03));
   border-bottom: 1px solid var(--border);
   position: relative;
 }
 
 .project-icon {
   width: 50px; height: 50px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(34, 211, 238, 0.1));
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(8, 145, 178, 0.08));
+  border: 1px solid rgba(99, 102, 241, 0.15);
   border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: var(--accent-hover);
+  color: var(--accent);
   transition: all 0.4s;
 }
 
 .project-card:hover .project-icon {
   transform: scale(1.1) rotate(-5deg);
-  box-shadow: 0 0 25px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.2);
+  background: var(--accent);
+  color: #fff;
 }
 
 .project-card h3 {
@@ -849,7 +853,7 @@ section {
 
 .project-tech {
   font-size: 0.82rem;
-  color: var(--accent-hover);
+  color: var(--accent);
   font-weight: 500;
   letter-spacing: 0.03em;
 }
@@ -874,7 +878,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: var(--accent-hover);
+  color: var(--accent);
 }
 .project-link i {
   font-size: 0.75rem;
@@ -911,28 +915,29 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08), transparent 60%);
+  background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.06), transparent 60%);
   opacity: 0;
   transition: opacity 0.4s;
 }
 
 .contact-card:hover {
-  border-color: rgba(99, 102, 241, 0.25);
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(99, 102, 241, 0.15);
   transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 50px rgba(99, 102, 241, 0.06);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.08), 0 0 0 1px rgba(99, 102, 241, 0.06);
 }
 
 .contact-card:hover::before { opacity: 1; }
 
 .contact-icon {
   width: 58px; height: 58px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(34, 211, 238, 0.08));
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(8, 145, 178, 0.06));
+  border: 1px solid rgba(99, 102, 241, 0.12);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.2rem;
   margin: 0 auto 1.25rem;
-  color: var(--accent-hover);
+  color: var(--accent);
   transition: all 0.4s;
   position: relative;
   z-index: 1;
@@ -940,7 +945,9 @@ section {
 
 .contact-card:hover .contact-icon {
   transform: scale(1.1);
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.25);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
 }
 
 .contact-card h3 { font-size: 0.95rem; margin-bottom: 0.4rem; font-weight: 600; position: relative; z-index: 1; }
@@ -979,11 +986,11 @@ footer {
 }
 
 .footer-links a:hover {
-  color: var(--accent);
+  color: #fff;
   border-color: var(--accent);
-  background: rgba(99, 102, 241, 0.1);
+  background: var(--accent);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
 }
 
 .footer-copy { font-size: 0.82rem !important; opacity: 0.5; }
@@ -1068,8 +1075,8 @@ section.visible {
 
 /* ---- Selection ---- */
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
-  color: #fff;
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--text);
 }
 
 /* ---- Scrollbar ---- */
@@ -1091,13 +1098,13 @@ section.visible {
     top: 0; right: -100%;
     width: 280px; height: 100vh;
     flex-direction: column;
-    background: rgba(10, 17, 40, 0.95);
+    background: rgba(250, 248, 245, 0.97);
     backdrop-filter: blur(30px);
     padding: 5rem 2rem 2rem;
     gap: 0;
     border-left: 1px solid var(--border);
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.08);
   }
 
   .nav-links.active { right: 0; }
@@ -1113,7 +1120,7 @@ section.visible {
   .projects-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
   .hero-scroll-indicator { display: none; }
-  .orb { opacity: 0.2; }
+  .orb { opacity: 0.25; }
 
   .reveal-left, .reveal-right {
     transform: translateY(20px);
